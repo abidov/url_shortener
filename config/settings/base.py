@@ -9,7 +9,7 @@ ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # url_shortener/
 APPS_DIR = ROOT_DIR / "url_shortener"
 env = environ.Env()
-env.read_env(env_file=ROOT_DIR / '.env')
+env.read_env(env_file=ROOT_DIR / ".env")
 
 READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=False)
 if READ_DOT_ENV_FILE:
@@ -73,7 +73,7 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
     "corsheaders",
-    'solo',
+    "solo",
 ]
 
 LOCAL_APPS = [

@@ -7,23 +7,53 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='IndexPageText',
+            name="IndexPageText",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('under_form_text', models.TextField(verbose_name='Text under the form')),
-                ('after_form_text_title1', models.CharField(max_length=255, verbose_name='First text title after the form')),
-                ('after_form_text_title2', models.CharField(max_length=255, verbose_name='Second text title after the form')),
-                ('after_form_text_description1', models.TextField(verbose_name='First text description after the form')),
-                ('after_form_text_description2', models.TextField(verbose_name='Second text description after the form')),
-                ('copyright_text', models.TextField(verbose_name='Copyright text')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "under_form_text",
+                    models.TextField(verbose_name="Text under the form"),
+                ),
+                (
+                    "after_form_text_title1",
+                    models.CharField(
+                        max_length=255, verbose_name="First text title after the form"
+                    ),
+                ),
+                (
+                    "after_form_text_title2",
+                    models.CharField(
+                        max_length=255, verbose_name="Second text title after the form"
+                    ),
+                ),
+                (
+                    "after_form_text_description1",
+                    models.TextField(
+                        verbose_name="First text description after the form"
+                    ),
+                ),
+                (
+                    "after_form_text_description2",
+                    models.TextField(
+                        verbose_name="Second text description after the form"
+                    ),
+                ),
+                ("copyright_text", models.TextField(verbose_name="Copyright text")),
             ],
             options={
-                'verbose_name': 'Index Page Texts',
+                "verbose_name": "Index Page Texts",
             },
         ),
     ]
