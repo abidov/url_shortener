@@ -1,0 +1,92 @@
+/* These styles are generated from project.scss. */
+
+.alert-debug {
+  color: black;
+  background-color: white;
+  border-color: #d6e9c6;
+}
+
+.alert-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+body {
+    background-color: #ededed;
+}
+
+.header {
+    margin-top: 30px;
+}
+
+.header h1 {
+    text-align: center;
+    font-size: 3.5rem;
+}
+
+.header h2 {
+    text-align: center;
+    color: #6f6f6f;
+}
+
+.url-form-title {
+    font-size: 2rem;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.url-form-description {
+    text-align: center;
+    margin-top: 5%;
+    color: #6f6f6f;
+}
+
+.url-form form {
+    margin: 1% 0;
+    padding: 2% 10%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.url-form-input {
+    width: 100%;
+    padding: 1% 0;
+}
+
+.url-form-button {
+    width: 100%;
+    padding: 1% 0;
+}
+
+.form-component {
+    font-size: 1.5rem;
+}
+
+.advantages {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.advantages-item {
+    margin-top: 5%;
+}
+
+.advantages-item-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2;
+}
+
+.footer {
+    background-color: #ffffff;
+    font-size: 1.3rem;
+    padding: 2% 0;
+    margin-top: 2%;
+    text-align: center;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
