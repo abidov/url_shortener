@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+  <main class="container">
+        <header class="header">
+            <h1>URL Shortener</h1>
+            <h2>Abidov Arslan's pet project</h2>
+        </header>
+        <section class="d-flex justify-content-center url-form">
+            <form class="">
+                <div class="url-form-title">
+                    You shortened url {{ object.real_url }}
+                </div>
+                <input type="url" class="url-form-input form-component" id="shortened_url" value="{{ request.scheme }}://{{ request.get_host }}{{ object.get_absolute_url }}">
+                <button type="button" onclick="copy_func()" class="url-form-button form-component">Copy URL</button>
+                <div class="url-form-description">
+                  Long URL: <a href="{{ object.real_url }}">{{ object.url }}</a>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer class="d-flex flex-column justify-content-center footer">
+        © {{ texts.copyright_text }}
+    </footer>
+{% endblock content %}
+{% block inline_javascript %}
+  <script>
+      function copy_func() {
+      let copyText = document.getElementById("shortened_url");
+
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+
+      navigator.clipboard.writeText(copyText.value);
+    }
+  </script>
+{% endblock inline_javascript %}

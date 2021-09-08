@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils.crypto import get_random_string
+from django.urls import reverse
 from solo.models import SingletonModel
 
 
@@ -23,3 +25,24 @@ class IndexPageText(SingletonModel):
 
     class Meta:
         verbose_name = "Index Page Texts"
+
+
+class Link(models.Model):
+    url = models.URLField(verbose_name='Real URL')
+    shortened_url_id = models.CharField(
+        verbose_name='Shortened URL ID', unique=True, editable=False,
+        max_length=8
+    )
+    count = models.PositiveIntegerField(verbose_name='Click count', default=0)
+
+    def __str__(self):
+        return self.url
+
+    def save(self, *args, **kwargs):
+        self.shortened_url_id = get_random_string(length=8)
+        super(Link, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse(
+            'shortener:link_redirect', kwargs={"url_id": self.shortened_url_id}
+        )

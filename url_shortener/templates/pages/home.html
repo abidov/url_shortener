@@ -6,11 +6,11 @@
             <h2>Abidov Arslan's pet project</h2>
         </header>
         <section class="d-flex justify-content-center url-form">
-            <form method="POST" class="">
+            <form method="POST" class="">{% csrf_token %}
                 <div class="url-form-title">
                     Paste the URL to be shortened
                 </div>
-                <input type="url" class="url-form-input form-component" placeholder="Enter the link here">
+                {{ form.url }}
                 <button type="submit" class="url-form-button form-component">Shorten URL</button>
                 <div class="url-form-description">
                     {{ texts.under_form_text }}
