@@ -45,4 +45,6 @@ class LinkRedirectView(RedirectView):
 
     def get_redirect_url(self, *args, **kwargs):
         link = get_object_or_404(Link, shortened_url_id=self.kwargs['url_id'])
+        link.count += 1
+        link.save()
         return link.url

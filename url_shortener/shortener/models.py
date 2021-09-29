@@ -39,7 +39,8 @@ class Link(models.Model):
         return self.url
 
     def save(self, *args, **kwargs):
-        self.shortened_url_id = get_random_string(length=8)
+        if not self.shortened_url_id:
+            self.shortened_url_id = get_random_string(length=8)
         super(Link, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
