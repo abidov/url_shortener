@@ -77,8 +77,8 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "users.apps.UsersConfig",
-    "shortener.apps.ShortenerConfig",
+    "url_shortener.users.apps.UsersConfig",
+    "url_shortener.shortener.apps.ShortenerConfig",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

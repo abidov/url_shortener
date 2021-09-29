@@ -1,7 +1,7 @@
 from django.contrib import admin
 from solo.admin import SingletonModelAdmin
 
-from .models import IndexPageText, Link
+from url_shortener.shortener.models import IndexPageText, Link
 
 
 @admin.register(Link)

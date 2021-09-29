@@ -1,6 +1,11 @@
 from django.urls import path
 
-from .views import AboutView, IndexView, LinkDetailView, LinkRedirectView
+from url_shortener.shortener.views import (
+    AboutView,
+    IndexView,
+    LinkDetailView,
+    LinkRedirectView,
+)
 
 app_name = "shortener"
 urlpatterns = [

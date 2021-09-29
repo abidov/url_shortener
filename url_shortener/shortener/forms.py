@@ -1,5 +1,6 @@
 from django import forms
-from shortener.models import Link
+
+from url_shortener.shortener.models import Link
 
 
 class LinkForm(forms.ModelForm):
