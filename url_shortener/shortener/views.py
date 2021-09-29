@@ -1,9 +1,8 @@
-from django.views.generic import TemplateView, CreateView, DetailView, RedirectView
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
-from shortener.models import IndexPageText
+from django.views.generic import CreateView, DetailView, RedirectView, TemplateView
 from shortener.forms import LinkForm
-from shortener.models import Link
+from shortener.models import IndexPageText, Link
 
 
 class IndexView(CreateView):

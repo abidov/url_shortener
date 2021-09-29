@@ -11,11 +11,7 @@ from django.urls import reverse
 from url_shortener.users.forms import UserChangeForm
 from url_shortener.users.models import User
 from url_shortener.users.tests.factories import UserFactory
-from url_shortener.users.views import (
-    UserRedirectView,
-    UserUpdateView,
-    user_detail_view,
-)
+from url_shortener.users.views import UserRedirectView, UserUpdateView, user_detail_view
 
 pytestmark = pytest.mark.django_db
 

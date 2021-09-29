@@ -1,6 +1,6 @@
 from django.db import models
-from django.utils.crypto import get_random_string
 from django.urls import reverse
+from django.utils.crypto import get_random_string
 from solo.models import SingletonModel
 
 
