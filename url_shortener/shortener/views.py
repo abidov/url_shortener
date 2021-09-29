@@ -1,6 +1,4 @@
-from django.views.generic import (
-    TemplateView, CreateView, DetailView, RedirectView
-)
+from django.views.generic import TemplateView, CreateView, DetailView, RedirectView
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from shortener.models import IndexPageText
@@ -18,9 +16,9 @@ class IndexView(CreateView):
         return context
 
     def get_success_url(self):
-        return reverse_lazy('shortener:link_detail', kwargs={
-            'url_id': self.object.shortened_url_id
-        })
+        return reverse_lazy(
+            "shortener:link_detail", kwargs={"url_id": self.object.shortened_url_id}
+        )
 
 
 class AboutView(TemplateView):
@@ -28,11 +26,11 @@ class AboutView(TemplateView):
 
 
 class LinkDetailView(DetailView):
-    template_name = 'pages/link_detail.html'
-    pk_url_kwarg = 'url_id'
+    template_name = "pages/link_detail.html"
+    pk_url_kwarg = "url_id"
 
     def get_object(self, queryset=None):
-        link = get_object_or_404(Link, shortened_url_id=self.kwargs['url_id'])
+        link = get_object_or_404(Link, shortened_url_id=self.kwargs["url_id"])
         return link
 
     def get_context_data(self, **kwargs):
@@ -42,9 +40,8 @@ class LinkDetailView(DetailView):
 
 
 class LinkRedirectView(RedirectView):
-
     def get_redirect_url(self, *args, **kwargs):
-        link = get_object_or_404(Link, shortened_url_id=self.kwargs['url_id'])
+        link = get_object_or_404(Link, shortened_url_id=self.kwargs["url_id"])
         link.count += 1
         link.save()
         return link.url

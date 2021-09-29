@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('shortener', '0003_auto_20210908_0845'),
+        ("shortener", "0003_auto_20210908_0845"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='link',
-            name='count',
-            field=models.PositiveIntegerField(default=0, verbose_name='Click count'),
+            model_name="link",
+            name="count",
+            field=models.PositiveIntegerField(default=0, verbose_name="Click count"),
         ),
     ]

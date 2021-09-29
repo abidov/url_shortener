@@ -28,12 +28,11 @@ class IndexPageText(SingletonModel):
 
 
 class Link(models.Model):
-    url = models.URLField(verbose_name='Real URL')
+    url = models.URLField(verbose_name="Real URL")
     shortened_url_id = models.CharField(
-        verbose_name='Shortened URL ID', unique=True, editable=False,
-        max_length=8
+        verbose_name="Shortened URL ID", unique=True, editable=False, max_length=8
     )
-    count = models.PositiveIntegerField(verbose_name='Click count', default=0)
+    count = models.PositiveIntegerField(verbose_name="Click count", default=0)
 
     def __str__(self):
         return self.url
@@ -45,5 +44,5 @@ class Link(models.Model):
 
     def get_absolute_url(self):
         return reverse(
-            'shortener:link_redirect', kwargs={"url_id": self.shortened_url_id}
+            "shortener:link_redirect", kwargs={"url_id": self.shortened_url_id}
         )
