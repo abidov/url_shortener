@@ -31,6 +31,7 @@ defusedxml==0.7.1
 distlib==0.3.2
 Django==3.1.13
 django-allauth==0.45.0
+django-anymail==8.4
 django-appconf==1.0.4
 django-celery-beat==2.2.1
 django-compressor==2.4.1
