@@ -4,10 +4,12 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import include, path
 from django.views import defaults as default_views
+from django.views.generic import RedirectView
 from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
-    path("", include("url_shortener.shortener.urls")),
+    path("", RedirectView.as_view(pattern_name="shortener:home"), name="index"),
+    path("shortener/", include("url_shortener.shortener.urls")),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
